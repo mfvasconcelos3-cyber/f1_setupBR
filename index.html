@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Manager - Calculadora de Setup</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="intestazione">
+    <div class="logo">
+      <h1 class="titolo">🏎️ Calculadora de Setup F1M 24</h1>
+    </div>
+    <div id="preset-area">
+      <span class="preset-text">Pista:</span>
+      <select id="preset-select"></select>
+      <button id="next-button">Próxima Pista ⏭️</button>
+    </div>
+  </header>
+
+  <main id="container">
+    <!-- ===== PRIMEIRA PILOTO ===== -->
+    <section id="calculator">
+      <h1>Primeiro Piloto</h1>
+
+      <h2>Configuração de Setup</h2>
+      <div class="slider-container">
+        <span class="etichetta">Asa Dianteira</span>
+        <input type="range" class="slider" id="slider-A" min="0" max="20" value="0">
+        <span class="etichetta2" id="val-A">0.0</span>
+      </div>
+      <div class="slider-container">
+        <span class="etichetta">Asa Traseira</span>
+        <input type="range" class="slider" id="slider-B" min="0" max="14" value="0">
+        <span class="etichetta2" id="val-B">9.0</span>
+      </div>
+      <div class="slider-container">
+        <span class="etichetta">Barra Anti-rolagem</span>
+        <input type="range" class="slider" id="slider-C" min="0" max="8" value="0">
+        <span class="etichetta2" id="val-C">9:1</span>
+      </div>
+      <div class="slider-container">
+        <span class="etichetta">Cambagem</span>
+        <input type="range" class="slider" id="slider-D" min="0" max="16" value="0">
+        <span class="etichetta2" id="val-D">-2.70°</span>
+      </div>
+      <div class="slider-container">
+        <span class="etichetta">Divergência</span>
+        <input type="range" class="slider" id="slider-E" min="0" max="20" value="0">
+        <span class="etichetta2" id="val-E">0.00°</span>
+      </div>
+
+      <h2>Feedbacks do Piloto</h2>
+      <div class="interval-container">
+        <span class="etichetta">Saída de Traseira</span>
+        <div class="interval-background">
+          <div class="interval-bar" id="bar-A"></div>
+          <div class="current-marker" id="marker-A"></div>
+        </div>
+        <button class="judgment-button u" id="btn-fb-A">Desconhecido</button>
+      </div>
+
+      <div class="interval-container">
+        <span class="etichetta">Frenagem</span>
+        <div class="interval-background">
+          <div class="interval-bar" id="bar-B"></div>
+          <div class="current-marker" id="marker-B"></div>
+        </div>
+        <button class="judgment-button u" id="btn-fb-B">Desconhecido</button>
+      </div>
+
+      <div class="interval-container">
+        <span class="etichetta">Curvas</span>
+        <div class="interval-background">
+          <div class="interval-bar" id="bar-C"></div>
+          <div class="current-marker" id="marker-C"></div>
+        </div>
+        <button class="judgment-button u" id="btn-fb-C">Desconhecido</button>
+      </div>
+
+      <div class="interval-container">
+        <span class="etichetta">Tração</span>
+        <div class="interval-background">
+          <div class="interval-bar" id="bar-D"></div>
+          <div class="current-marker" id="marker-D"></div>
+        </div>
+        <button class="judgment-button u" id="btn-fb-D">Desconhecido</button>
+      </div>
+
+      <div class="interval-container">
+        <span class="etichetta">Retas</span>
+        <div class="interval-background">
+          <div class="interval-bar" id="bar-E"></div>
+          <div class="current-marker" id="marker-E"></div>
+        </div>
+        <button class="judgment-button u" id="btn-fb-E">Desconhecido</button>
+      </div>
+
+      <div id="control-buttons">
+        <button class="setup-button" id="calculate-button">Calcular Setup</button>
+        <button class="setup-button" id="reset-button">Resetar</button>
+      </div>
+
+      <p id="result-p1" style="text-align: center; margin-top: 15px; font-weight: bold; color: #00ffff;"></p>
+    </section>
+
+    <!-- ===== SEGUNDO PILOTO ===== -->
+    <section id="calculator">
+      <h1>Segundo Piloto</h1>
+
+      <h2>Configuração de Setup</h2>
+      <div class="slider-container">
+        <span class="etichetta">Asa Dianteira</span>
+        <input type="range" class="slider" id="slider-A_2" min="0" max="20" value="0">
+        <span class="etichetta2" id="val-A_2">0.0</span>
+      </div>
+      <div class="slider-container">
+        <span class="etichetta">Asa Traseira</span>
+        <input type="range" class="slider" id="slider-B_2" min="0" max="14" value="0">
+        <span class="etichetta2" id="val-B_2">9.0</span>
+      </div>
+      <div class="slider-container">
+        <span class="etichetta">Barra Anti-rolagem</span>
+        <input type="range" class="slider" id="slider-C_2" min="0" max="8" value="0">
+        <span class="etichetta2" id="val-C_2">9:1</span>
+      </div>
+      <div class="slider-container">
+        <span class="etichetta">Cambagem</span>
+        <input type="range" class="slider" id="slider-D_2" min="0" max="16" value="0">
+        <span class="etichetta2" id="val-D_2">-2.70°</span>
+      </div>
+      <div class="slider-container">
+        <span class="etichetta">Divergência</span>
+        <input type="range" class="slider" id="slider-E_2" min="0" max="20" value="0">
+        <span class="etichetta2" id="val-E_2">0.00°</span>
+      </div>
+
+      <h2>Feedbacks do Piloto</h2>
+      <div class="interval-container">
+        <span class="etichetta">Saída de Traseira</span>
+        <div class="interval-background">
+          <div class="interval-bar" id="bar-A_2"></div>
+          <div class="current-marker" id="marker-A_2"></div>
+        </div>
+        <button class="judgment-button u" id="btn-fb-A_2">Desconhecido</button>
+      </div>
+
+      <div class="interval-container">
+        <span class="etichetta">Frenagem</span>
+        <div class="interval-background">
+          <div class="interval-bar" id="bar-B_2"></div>
+          <div class="current-marker" id="marker-B_2"></div>
+        </div>
+        <button class="judgment-button u" id="btn-fb-B_2">Desconhecido</button>
+      </div>
+
+      <div class="interval-container">
+        <span class="etichetta">Curvas</span>
+        <div class="interval-background">
+          <div class="interval-bar" id="bar-C_2"></div>
+          <div class="current-marker" id="marker-C_2"></div>
+        </div>
+        <button class="judgment-button u" id="btn-fb-C_2">Desconhecido</button>
+      </div>
+
+      <div class="interval-container">
+        <span class="etichetta">Tração</span>
+        <div class="interval-background">
+          <div class="interval-bar" id="bar-D_2"></div>
+          <div class="current-marker" id="marker-D_2"></div>
+        </div>
+        <button class="judgment-button u" id="btn-fb-D_2">Desconhecido</button>
+      </div>
+
+      <div class="interval-container">
+        <span class="etichetta">Retas</span>
+        <div class="interval-background">
+          <div class="interval-bar" id="bar-E_2"></div>
+          <div class="current-marker" id="marker-E_2"></div>
+        </div>
+        <button class="judgment-button u" id="btn-fb-E_2">Desconhecido</button>
+      </div>
+
+      <div id="control-buttons">
+        <button class="setup-button" id="calculate-button_2">Calcular Setup</button>
+        <button class="setup-button" id="reset-button_2">Resetar</button>
+      </div>
+
+      <p id="result-p2" style="text-align: center; margin-top: 15px; font-weight: bold; color: #00ffff;"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
